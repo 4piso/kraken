@@ -1,0 +1,54 @@
+{
+    "database": {
+        "mongodb": {
+            "db": "cuatro",
+            "host": "localhost"
+        }
+    },
+    "manifest": {
+        "connections": [
+            {
+                "port": 8000,
+                "labels": ["web"]
+            },
+            {
+                "port": 3001,
+                "labels": ["portal"]
+            }
+        ],
+        "registrations": [
+            {
+                "plugin": "vision",
+                "options": {
+                    "select": ["web"]
+                }
+            },
+            {
+                "plugin": "inert",
+                "options": {
+                    "select": ["web"]
+                }
+            },
+            {
+                "plugin": {
+                    "register": "good",
+                    "options": {
+                        "opsInterval": 5000,
+                        "reporters": [
+                            { "reporter": "good-console", "events": { "log": "*" } }
+                        ]
+                    }
+                },
+                "options": {
+                    "select": ["web"]
+                }
+            },
+            {
+                "plugin": "./routes",
+                "options": {
+                    "select": ["web"]
+                }
+            }
+        ]
+    }
+}
