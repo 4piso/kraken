@@ -30,6 +30,12 @@
                 }
             },
             {
+                "plugin": "hapi-boom-jsend",
+                "options": {
+                    "select": ["web"]
+                }
+            },
+            {
                 "plugin": {
                     "register": "good",
                     "options": {
