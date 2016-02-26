@@ -13,12 +13,18 @@ const internals = {
     manifest: Config.manifest,
     options: {
         relativeTo: Path.resolve(__dirname, '../../lib')
+    },
+    inject: (options) => {
+        return new Promise((resolve, reject) => {
+            server.inject(options, resolve);
+        });
     }
 };
 
 // Test shortcuts ===============================
 const lab = exports.lab = Lab.script();
 const describe = lab.experiment;
+const expect = Code.expect;
 const it = lab.test;
 
 // Tests ========================================
@@ -28,29 +34,20 @@ describe('/user', () => {
 
         App.init(internals.manifest, internals.options, (err, server) => {
 
-            if (err) {
-                done();
-            }
+            expect(err).to.not.exist();
 
             const request = {
-                method: 'POST',
-                url: '/user/',
-                payload: {
-                    fname: 'testUser',
-                    lname: 'testPassword',
-                    email: 'test@test.com',
-                    password: 'Testing01'
-                }
+                method: 'GET',
+                url: '/user/'
             };
 
-            server.inject(request, (response) => {
-console.log(response);
-                internals.resultID = response.data._id; // Update resultId
-                Code.expect(response.statusCode).to.equal(200);
-                done();
-            });
+            server.select('api').inject(request, (response) => {
 
-            server.stop(done);
+                console.log(response);
+                internals.resultID = response.data._id; // Update resultId
+                expect(response.statusCode).to.equal(200);
+                server.stop(done);
+            });
         });
     });
 
