@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "lab -t 100",
-    "test-cov-html": "lab -r html -o coverage.html"
+    "test-cov-html": "lab -L -r html -o coverage.html"
   },
   "repository": {
     "type": "git",

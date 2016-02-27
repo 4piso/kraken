@@ -15,7 +15,9 @@ const internals = {
         relativeTo: Path.resolve(__dirname, '../../lib')
     },
     inject: (options) => {
+
         return new Promise((resolve, reject) => {
+
             server.inject(options, resolve);
         });
     }
