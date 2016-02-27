@@ -2,7 +2,7 @@
     "database": {
         "mongodb": {
             "db": "cuatro",
-            "host": "localhost"
+            "host": "192.81.216.228"
         }
     },
     "manifest": {
