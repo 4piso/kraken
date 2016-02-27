@@ -30,28 +30,28 @@ const expect = Code.expect;
 const it = lab.test;
 
 // Tests ========================================
-describe('/user', () => {
+// describe('/user', () => {
 
-    it('should create a user', (done) => {
+    // it('should create a user', (done) => {
 
-        App.init(internals.manifest, internals.options, (err, server) => {
+    //     App.init(internals.manifest, internals.options, (err, server) => {
 
-            expect(err).to.not.exist();
+    //         expect(err).to.not.exist();
 
-            const request = {
-                method: 'GET',
-                url: '/user/'
-            };
+    //         const request = {
+    //             method: 'GET',
+    //             url: '/user/'
+    //         };
 
-            server.select('api').inject(request, (response) => {
+    //         server.select('api').inject(request, (response) => {
 
-                console.log(response);
-                internals.resultID = response.data._id; // Update resultId
-                expect(response.statusCode).to.equal(200);
-                server.stop(done);
-            });
-        });
-    });
+    //             console.log(response);
+    //             internals.resultID = response.data._id; // Update resultId
+    //             expect(response.statusCode).to.equal(200);
+    //             server.stop(done);
+    //         });
+    //     });
+    // });
 
     // it('should delete a user', (done) => {
 
@@ -71,4 +71,4 @@ describe('/user', () => {
     //         server.stop(done);
     //     });
     // });
-});
+// });
