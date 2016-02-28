@@ -4,7 +4,7 @@
   "description": "Comienzo de Cuarto-Piso",
   "main": "index.js",
   "scripts": {
-    "test": "lab -t 100",
+    "test": "lab",
     "test-cov-html": "lab -L -r html -o coverage.html"
   },
   "repository": {
