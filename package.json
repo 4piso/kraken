@@ -24,6 +24,7 @@
     "good": "6.6.0",
     "good-console": "5.3.1",
     "hapi": "13.0.0",
+    "hapi-auth-jwt2": "5.4.1",
     "hapi-boom-jsend": "2.0.0",
     "hoek": "3.0.4",
     "joi": "8.0.2",

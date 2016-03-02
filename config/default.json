@@ -1,4 +1,5 @@
 {
+    "secret": "84:4bXXhzqoM.s`v;?7m=-~!C}a`adriP9}_5M*:!bMbb]!6]--B'J+ZW8)a7X&",
     "database": {
         "mongodb": {
             "db": "cuatro",
@@ -16,6 +17,12 @@
         "registrations": [
             {
                 "plugin": "hapi-boom-jsend",
+                "options": {
+                    "select": ["api"]
+                }
+            },
+            {
+                "plugin": "hapi-auth-jwt2",
                 "options": {
                     "select": ["api"]
                 }
