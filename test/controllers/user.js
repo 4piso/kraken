@@ -1,9 +1,9 @@
 'use strict';
 
 // Load Modules =================================
-const Code = require('code');
+// const Code = require('code');
 const Lab = require('lab');
-const App = require('../../lib');
+// const App = require('../../lib');
 const Path = require('path');
 const Config = require('../../config/default.json');
 
@@ -26,15 +26,15 @@ const internals = {
 // Test shortcuts ===============================
 const lab = exports.lab = Lab.script();
 const describe = lab.experiment;
-const expect = Code.expect;
-const it = lab.test;
+// const expect = Code.expect;
+// const it = lab.test;
 
 // Tests ========================================
-// describe('/user', () => {
+describe('/user', () => {
 
     // it('should create a user', (done) => {
 
-    //     App.init(internals.manifest, internals.options, (err, server) => {
+    //     App.init(internals.manifest, internals.options, function (err, server) {
 
     //         expect(err).to.not.exist();
 
@@ -43,10 +43,9 @@ const it = lab.test;
     //             url: '/user/'
     //         };
 
-    //         server.select('api').inject(request, (response) => {
+    //         server.inject(request, function (response) {
 
-    //             console.log(response);
-    //             internals.resultID = response.data._id; // Update resultId
+    //             // internals.resultID = response.data._id; // Update resultId
     //             expect(response.statusCode).to.equal(200);
     //             server.stop(done);
     //         });
@@ -71,4 +70,4 @@ const it = lab.test;
     //         server.stop(done);
     //     });
     // });
-// });
+});
