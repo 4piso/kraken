@@ -6,6 +6,11 @@
             "host": "192.81.216.228"
         }
     },
+    "s3": {
+        "keyId": "AKIAJBYCMQEODUQLTHRQ",
+        "secretKey": "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",
+        "bucket": "easily"
+    },
     "manifest": {
         "connections": [
             {

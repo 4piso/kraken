@@ -18,6 +18,9 @@ Server.init(Config.manifest, internals.options, (err, server) => {
 
     // Server connections
     const api = server.select('api');
+    server.app = {
+        rootPath: __dirname
+    };
 
     // Logging started server
     console.log('API server started at: ' + api.info.uri);
