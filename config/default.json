@@ -33,12 +33,6 @@
                 }
             },
             {
-                "plugin": "bell",
-                "options": {
-                    "select": ["api"]
-                }
-            },
-            {
                 "plugin": {
                     "register": "good",
                     "options": {
